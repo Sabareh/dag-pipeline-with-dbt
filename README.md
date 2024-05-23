@@ -1,7 +1,4 @@
-# Project Description: ELT Pipeline Implementation with dbt, Snowflake, and Airflow
-
-## Project Title:
-End-to-End ELT Pipeline Implementation Using dbt, Snowflake, and Airflow
+# End-to-End ELT Pipeline Implementation Using dbt, Snowflake, and Airflow
 
 ## Project Overview:
 The project focuses on the development and deployment of an ELT (Extract, Load, Transform) pipeline utilizing industry-standard tools such as dbt (data build tool), Snowflake, and Airflow. The pipeline is designed to handle the transformation and loading of data from source tables to final data marts, ensuring efficient data processing and robust data management.
