@@ -1,48 +1,43 @@
-Overview
-========
+# Project Description: ELT Pipeline Implementation with dbt, Snowflake, and Airflow
 
-Welcome to Astronomer! This project was generated after you ran 'astro dev init' using the Astronomer CLI. This readme describes the contents of the project, as well as how to run Apache Airflow on your local machine.
+## Project Title:
+End-to-End ELT Pipeline Implementation Using dbt, Snowflake, and Airflow
 
-Project Contents
-================
+## Project Overview:
+The project focuses on the development and deployment of an ELT (Extract, Load, Transform) pipeline utilizing industry-standard tools such as dbt (data build tool), Snowflake, and Airflow. The pipeline is designed to handle the transformation and loading of data from source tables to final data marts, ensuring efficient data processing and robust data management.
 
-Your Astro project contains the following files and folders:
+## Key Components and Features:
 
-- dags: This folder contains the Python files for your Airflow DAGs. By default, this directory includes one example DAG:
-    - `example_astronauts`: This DAG shows a simple ETL pipeline example that queries the list of astronauts currently in space from the Open Notify API and prints a statement for each astronaut. The DAG uses the TaskFlow API to define tasks in Python, and dynamic task mapping to dynamically print a statement for each astronaut. For more on how this DAG works, see our [Getting started tutorial](https://docs.astronomer.io/learn/get-started-with-airflow).
-- Dockerfile: This file contains a versioned Astro Runtime Docker image that provides a differentiated Airflow experience. If you want to execute other commands or overrides at runtime, specify them here.
-- include: This folder contains any additional files that you want to include as part of your project. It is empty by default.
-- packages.txt: Install OS-level packages needed for your project by adding them to this file. It is empty by default.
-- requirements.txt: Install Python packages needed for your project by adding them to this file. It is empty by default.
-- plugins: Add custom or community plugins for your project to this file. It is empty by default.
-- airflow_settings.yaml: Use this local-only file to specify Airflow Connections, Variables, and Pools instead of entering them in the Airflow UI as you develop DAGs in this project.
+1. **Data Modeling and Design:**
+   - Developed and implemented basic data modeling techniques, including the creation of fact tables and data marts.
+   - Designed the schema to support efficient data retrieval and reporting.
 
-Deploy Your Project Locally
-===========================
+2. **Source and Staging Tables:**
+   - Created source tables to ingest raw data.
+   - Developed staging tables that reference the source tables for initial data transformations and cleaning.
 
-1. Start Airflow on your local machine by running 'astro dev start'.
+3. **Transformation Logic:**
+   - Implemented mart tables that perform various transformations to convert raw data into business-relevant insights.
+   - Wrote custom macros in dbt to handle complex transformation logic based on specific business requirements.
 
-This command will spin up 4 Docker containers on your machine, each for a different Airflow component:
+4. **Snowflake RBAC:**
+   - Applied Snowflake Role-Based Access Control (RBAC) concepts to ensure secure and controlled access to data.
 
-- Postgres: Airflow's Metadata Database
-- Webserver: The Airflow component responsible for rendering the Airflow UI
-- Scheduler: The Airflow component responsible for monitoring and triggering tasks
-- Triggerer: The Airflow component responsible for triggering deferred tasks
+5. **Orchestration with Airflow:**
+   - Utilized Apache Airflow to orchestrate the dbt project, ensuring seamless execution of data workflows.
+   - Deployed the pipeline using Airflow's Astronomer Cosmos to manage and monitor the dbt jobs effectively.
 
-2. Verify that all 4 Docker containers were created by running 'docker ps'.
+## Tools and Technologies:
+- **dbt (data build tool):** For transformation logic and data modeling.
+- **Snowflake:** For data warehousing and storage.
+- **Apache Airflow:** For workflow orchestration and scheduling.
+- **Astronomer Cosmos:** For deploying and managing Airflow workflows.
 
-Note: Running 'astro dev start' will start your project with the Airflow Webserver exposed at port 8080 and Postgres exposed at port 5432. If you already have either of those ports allocated, you can either [stop your existing Docker containers or change the port](https://docs.astronomer.io/astro/test-and-troubleshoot-locally#ports-are-not-available).
+## Project Achievements:
+- Successfully created a robust and scalable ELT pipeline that integrates seamlessly with modern data stack components.
+- Enhanced data processing efficiency through well-designed data models and transformation logic.
+- Improved data security and access management using Snowflake RBAC.
+- Streamlined workflow orchestration and monitoring using Airflow and Astronomer Cosmos.
 
-3. Access the Airflow UI for your local Airflow project. To do so, go to http://localhost:8080/ and log in with 'admin' for both your Username and Password.
-
-You should also be able to access your Postgres Database at 'localhost:5432/postgres'.
-
-Deploy Your Project to Astronomer
-=================================
-
-If you have an Astronomer account, pushing code to a Deployment on Astronomer is simple. For deploying instructions, refer to Astronomer documentation: https://docs.astronomer.io/cloud/deploy-code/
-
-Contact
-=======
-
-The Astronomer CLI is maintained with love by the Astronomer team. To report a bug or suggest a change, reach out to our support.
+## Conclusion:
+This project demonstrates the effective use of dbt, Snowflake, and Airflow to build an end-to-end ELT pipeline. The implementation highlights the importance of data modeling, secure data management, and efficient workflow orchestration in modern data engineering practices. The successful deployment and execution of this pipeline provide a strong foundation for future data integration and transformation projects.
